@@ -79,6 +79,21 @@ console.log( typeof input );   // "100" * 1 --> 100 number(숫자)
 input = Number( input );       // 방법2]
 console.log( typeof input );  
 
+console.log( Number("100") );       // "100" -> 100
+console.log( parseInt("100") );     // "100" -> 100
+console.log( parseFloat("3.14") );  // "3.14" -> 3.14
+console.log( String( 100 ) );       // 100 -> "100"
+console.log( 100 + "" );            // 100 -> "100"
+console.log( Boolean("true") );     // "true" -> true
+
+
+
+
+
+
+
+
+
 
 
 
