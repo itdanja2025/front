@@ -85,7 +85,4 @@ console.log( `결과9 : ${ todoList } `);
 let waitingList = ['김민준', '이서연', '박도윤', '최지우'];
 // 배열의 길이는 1부터 , 배열의 인덱스는 0부터 , 배열명.length : 총길이 , 배열명.length-1 : 마지막인덱스
 let 마지막인덱스 = waitingList.length - 1;
-console.log( `결과10 : 마지막 대기자는 ${ waitingList[ 마지막인덱스 ] } `)
-
-
-
+console.log( `결과10 : 마지막 대기자는 ${ waitingList[ 마지막인덱스 ] } `);
