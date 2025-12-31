@@ -1,0 +1,26 @@
+body{
+    background-color: pink;
+    text-align: center; /* 하위 요소들의 텍스트 가로 가운데정렬*/
+    display: flex; /* 하위 요소들의 배치방법*/
+    justify-content: center ; /* flex 요소들을 가로 정렬 방법*/
+}
+.제목{
+    border: 2px solid white ;
+    border-radius: 20px; /* 둥근모서리*/
+    font-weight: bold;  font-size: 20px;
+    width: 300px;       margin: 15px;
+}
+.이미지 > img{
+    width: 200px; height: 200px; /* 정사각형 */
+    border-radius: 200px; /* 둥근모서리 */
+    margin: 20px 0px;
+}
+.링크목록{ margin: 30px 0px; }
+.링크목록 > div{ 
+    background-color: skyblue;
+    padding: 20px 0px;
+    margin: 15px 0px;
+    border-radius: 10px;
+}
+ /* a마크업은 기본값으로 밑줄 과 파랑색 글꼴 */
+a{ color: white; text-decoration: none; }
