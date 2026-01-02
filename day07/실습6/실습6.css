@@ -11,10 +11,6 @@ a{ /* a마크업 기본css 제거 */
 }
 li{ list-style-type: none; }/* 목록 글머리 제거*/
 
-*{ /* 작업용 */
-    border: 1px solid red;
-    padding: 2px;
-}
 /* ================ [1] 헤더 : HTML -> CSS ================= */
 /* div, li 등 : block 이라서 한줄에 하나씩 표시 */
 #header{
@@ -43,5 +39,43 @@ li{ list-style-type: none; }/* 목록 글머리 제거*/
     width: 100%; /* 전체 사이즈 */
 }
 /* ================ [3] 본문 ================= */
-
+#main{
+    display: flex; justify-content: space-between;
+    width: 1280px; 
+    margin: 20px auto;
+}
+/* 3-1 사이드바 */
+#sidebar{ width: 220px;}
+#sidebar > h3{
+    background-color: gray; color: white;
+    padding: 10px; /* 안쪽여백 */
+    font-size: 20px;
+}
+#sidebar > ol > li {
+    padding: 10px;
+    border-bottom: 1px solid #eeeeee ; /* 아래쪽 테두리 */
+}
+/* 3-2 내용물 */
+#content{ width: 1030px; }
+#content > h3{
+    font-size: 20px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+#content > img{ 
+    /* [1] 이미지 감싼 구역 생성 [2] display:block 변경 */
+    display: block;
+    margin: 0 auto;
+}
 /* ================ [4] 푸터 ================= */
+#footer{
+    background-color: #2c2a29;
+    color: white;
+    padding: 15px 0px;
+}
+#footer-inner{
+    display: flex;
+    justify-content: space-between;
+    width: 1280px; margin: 0 auto;
+}
