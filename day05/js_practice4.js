@@ -65,7 +65,8 @@ let player2 = Number( prompt( " 플레이어2 : 가위[0] 바위[1] 보[2] : ") 
 // 방법1 : if( player1 == 0 && player2 == 2 || player1 == 1 && player2 == 0 || player1 == 2 && player2 == 1  ){
 if( player1 == (player2 + 1) % 3  ){ // % 나머지연산
     console.log( "플레이어1 승리");
-}else if( player1 == player2 ){  console.log( "무승부");
+}else if( player1 == player2 ){  
+    console.log( "무승부");
 }else{ console.log( "플레이어2 승리"); }
 
 /*문제 9: 주차 차량 위치 검색
