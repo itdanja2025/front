@@ -78,7 +78,7 @@ let numbers3 = [5, 3, 4, 1, 2]; // 오름차순은 더 큰값이 뒤로 이동�
 // [1] 
 for( let i = 0 ; i < numbers3.length -1 ; i++ ){ // 마지막인덱스는 인접한 인덱스(+1) 없기 때문에 생략
     //console.log( i );
-    for( let j = 0 ; j < numbers3.length-1 ; j++ ){
+    for( let j = 0 ; j < numbers3.length-1-i ; j++ ){
         // console.log( j );   // J는 마지막 인덱스까지 갈 필요가 없다.
         // console.log( j+1 ); // J와 인접한 인덱스 ( +1 )
         if( numbers3[j] > numbers3[j+1] ){ // 만약에 J값이 인접한 J+1 보다 더 크면 스왑 , > 오름차순 , <내림차순 
