@@ -67,10 +67,33 @@ for( let index = 0 ; index <= numbers2.length - 1 ; index++ ){
 } // for end 
 console.log( newAry );
 
-/*문제 6: 버블 정렬 (Bubble Sort) 구현하기
-주어진 숫자 배열을 '버블 정렬' 알고리즘을 이용하여 오름차순으로 정렬하고, 최종 정렬된 배열을 출력하시오.
-let numbers = [5, 3, 4, 1, 2];
+/*문제 6: 버블 정렬 (Bubble Sort) 구현하기 : 주어진 숫자 배열을 '버블 정렬' 알고리즘을 이용하여 오름차순으로 정렬하고, 최종 정렬된 배열을 출력하시오.
 힌트: 중첩 for 반복문을 사용하며, 이웃한 두 요소를 비교하 위치를 바꿉니다.*/
+let numbers3 = [5, 3, 4, 1, 2]; // 오름차순은 더 큰값이 뒤로 이동한다. 스왑 : let temp = a;  a=b ; b=temp;
+// 1 : (1) 5 > 3    (2) 3 > 4   (3) 4 > 1 (4) 1 > 2   
+//         j > j+1      j > j+1                            
+// 2 : (1) 5 > 3 (2) 3 > 4 (3) 4 > 1
+// 3 : (1) 5 > 3 (2) 3 > 4
+// 4 : (1) 5 > 3 
+// [1] 
+for( let i = 0 ; i < numbers3.length -1 ; i++ ){ // 마지막인덱스는 인접한 인덱스(+1) 없기 때문에 생략
+    //console.log( i );
+    for( let j = 0 ; j < numbers3.length-1 ; j++ ){
+        // console.log( j );   // J는 마지막 인덱스까지 갈 필요가 없다.
+        // console.log( j+1 ); // J와 인접한 인덱스 ( +1 )
+        if( numbers3[j] > numbers3[j+1] ){ // 만약에 J값이 인접한 J+1 보다 더 크면 스왑 , > 오름차순 , <내림차순 
+            let temp = numbers3[j];         // let temp = a;
+            numbers3[j] = numbers3[j+1];    // a = b ;
+            numbers3[j+1] = temp;           // b = temp;
+        }
+    }
+} // for end 
+console.log( numbers3 );
+
+
+
+
+
 
 /*문제 7: 재고 관리 시스템
 두 개의 배열 products(상품 목록)와 stock(재고 수량)이 있습니다. 사용자로부터 구매할 상품명과 수량을 입력받아, 재고가 충분하면 "구매 완료!"를 출력하고 재고를 차감하세요. 재고가 부족하면 "재고가 부족합니다."를 출력합니다.
