@@ -49,7 +49,8 @@ li{ list-style-type: none;} /* 4. 글머리 제거 */
 }
 .sidebar > .searchbox > button{ padding: 4px; } 
 .sidebar > .sub-title{
-    border-top: 2px solid black;  border-bottom: 1px solid #eeeeee;
+    border-top: 2px solid black;  
+    border-bottom: 1px solid #eeeeee;
     margin-top: 30px; padding: 10px 0px; 
     font-size: 18px;
 }
@@ -67,3 +68,12 @@ li{ list-style-type: none;} /* 4. 글머리 제거 */
 }
 .content .board{ margin-bottom: 50px; }
 
+/* ============ 7. 본문-제방이미지 CSS ============ */
+.rightbox > .product-list{
+    display: flex; /* 하위 요소들의 배치 방법*/
+    /* 만일 하위 요소들이 부모 요소크기 보다 커지면 줄바꿈 */
+    flex-wrap: wrap; 
+}
+.rightbox > .product-list > .product{
+    margin: 0px 50px 50px 0px ; /*  순서 : top right bottom left*/
+}
