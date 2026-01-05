@@ -1,0 +1,25 @@
+/* ============ 1. 공통 CSS ============ */
+*{ padding: 0px; margin: 0px; } /* 1. 기본여백 제거 */
+*{ box-sizing: border-box; } /* 2. 테두리까지 사이즈 계산 */
+a{ text-decoration: none; color: black; } /* 3. a마크업 기본값 제거 */
+li{ list-style-type: none;} /* 4. 글머리 제거 */
+
+/* ============ 2. 헤더 CSS ============ */
+#header{
+    width: 1280px; /* 가로 사이즈 */
+    margin: 0 auto; /* 구역 가로 가운데 정렬 */
+    display: flex; /* 하위 요소 배치 방법 */
+    justify-content: space-between; /* 양끝 여백없이 균등정렬*/
+    align-items: center; /* 세로 정렬 */
+}
+#header > .menu > ul{ /* #아이디 , .클래스 , 마크업 */
+    display: flex; justify-content: flex-end;
+}
+.top-menu > li{ font-size: 12px ; margin: 10px 3px; }
+.main-menu > li{ 
+    font-size: 20px; font-weight: bold; 
+    margin: 10px 0px 30px 80px ; /* 바깥여백 : 위 오른쪽 아래 왼쪽 순서 */
+}
+
+/* ============ 3. 대표이미지 CSS ============ */
+#main-img > img{  width: 100%; } /* 드바이스(화면) 전체 크기 */
