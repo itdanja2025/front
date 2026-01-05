@@ -30,7 +30,12 @@ li{ list-style-type: none;} /* 4. 글머리 제거 */
     display: flex; justify-content: space-between;
 }
 #main > .sidebar{ width: 250px; } /* 왼쪽 */
-#main > .content{ width: 1000px; } /* 오른쪽 */
+#main > .content{  /* 오른쪽 */
+    width: 1000px; 
+    display: flex; justify-content: space-between;
+}
+/* 선택자A, 선택자B : 다중선택자 */
+#main > .content > .leftbox , .rightbox{ width: 495px; }
 /* ============ 5. 본문-사이드바 CSS ============ */
 .sidebar > .title{
     background-color: #0ca9a2; color: white;
@@ -49,4 +54,16 @@ li{ list-style-type: none;} /* 4. 글머리 제거 */
     font-size: 18px;
 }
 .sidebar > .sub-menu > li{ padding: 5px; }
+
+/* ============ 6. 본문-게시판 CSS ============ */
+.content .sub-title{
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.content .board > li {
+    display: flex; justify-content: space-between;
+    padding: 7px 0px;
+}
+.content .board{ margin-bottom: 50px; }
 
