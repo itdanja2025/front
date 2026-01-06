@@ -17,7 +17,7 @@ a:active{ color: yellow; font-size: 30px; }
 }
 /* [활용1] 글머리 */
 li{ list-style-type: none; }
-.box2 > li::before{ content: "🧑‍⚖️"; color: red; }
+.box2 > li::before{ content: "🍀"; color: red; }
 /* [활용2] 글머리2 */
 .box2 > li::after{ content: url("../짱구.jpg"); }
 /* [5] 선택자:nth-of-type( 순서번호 )    선택자의 요소가 여러개 일때 번호로 선택하기 */
