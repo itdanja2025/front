@@ -21,5 +21,46 @@ let 컵 = 믹서기함수( "사과" ); // 믹서기함수에 "사과" 라는 문
 let data = "딸기";
 let 컵2 = 믹서기함수( data );
 
+// [6] 매개변수 X , 반환 X
+function func1( ){ console.log("func1 exe"); }
+func1();
+// 매개변수 O , 반환 X , 대표적으로 console.log( ); , 생활 : 폐핸드폰반납기(폐핸드폰)
+function func2( x , y ){ console.log("func2 exe"); }
+func2( 3 , 5 ); 
+// 매개변수 O , 반환 O , 대표적으로 prompt( ) ;     , 생활 : 자판기(돈->음료)
+function func3( x , y ){ console.log("func3 exe"); return x+y; }
+let result1 = func3( 3 , 5 );
+// 매개변수 X , 반환 O 
+function func4( ) { console.log( "func4 exe"); return 10; }
+let result2 = func4( );
+
+// [7] 지역변수란? 특정한 if/for/함수 { } 안에서 선언된 (매개)변수는 { } 밖에서 호출/사용 안된다.
+let 전역변수 = "대한민국";
+if( true ){ // 경기도 시작  
+    let 지역변수1 = "경기도";
+    console.log( 지역변수1) ; // OK 
+    for( let i = 0 ; i < 1 ; i++ ){ // 안양시 시작 
+        let 지역변수2 = "안양시";
+        console.log( 지역변수1 ); // OK 경기도
+        console.log( 지역변수2 ); // OK 안양시
+        console.log( 전역변수 ); // OK 대한민국
+    } // 안양시 끝 
+    // console.log( 지역변수2 ); // fail // ReferenceError: 지역변수2 is not defined\
+} // 경기도 끝 
+// console.log( 지역변수1 ); // fail // ReferenceError : 지역변수1 is not defined
+// console.log( 지역변수2 ); // fail // ReferenceError: 지역변수2 is not defined
+function func5( 지역변수3 ){ // 즉] 매개변수 또한 지역변수의 특징을 갖는다.! 장점:함수 호출/사용 시 에만 메모리(저장소)사용한다.
+    let 지역변수4 = "수원시";
+}// func end 
+func5( "안산시");
+
+// [8] 함수 호출/사용 하는 방법
+// (1) JS에서 호출 : 함수명( );
+alert("JS에서 실행");
+
+// (2) HTML 에서 호출 : <마크업명 이벤트속성명="함수명( )" />
+// onclick : 해당 마크업 클릭했을떄 (이벤트/JS) 발생
+// <button onclick="alert('HTML에서 실행')"> 버튼 </button>
+
 
 
