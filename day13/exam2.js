@@ -63,7 +63,20 @@ printFruits( nameList );
 
 /*예제 8: Boolean 값 반환하기
 임의의 숫자 하나를 매개변수로 받아, 그 숫자가 0보다 크면 true를, 그렇지 않으면 false를 반환하는 isPositive 함수를 만들어 보세요. */
+function isPositive( x ){
+    if( x > 0 ){ return true;} // 조건에 따른 결과를 반환한다.
+    else{ return false; }
+} 
+let result8 = isPositive( -1 ); // false ;
 
 /*예제 9: 전역 변수와 지역 변수
 let globalText = '전역'; 변수를 선언하세요. printLocal 함수 안에서는 let localText = '지역'; 변수를 선언하고, 
 두 변수를 모두 콘솔에 출력해 보세요. 함수 바깥에서는 globalText만 출력되는 것을 확인하세요.  */
+let globalText = '전역';
+function printLocal() {
+    let localText = '지역';
+    console.log( globalText );  // 즉]  선언 위치에 따른 { } 중괄호 안으로 들어가는건 가능 , 
+    console.log( localText );   // { } 중괄호 밖으로 나가는건 불가능
+} // f end 
+console.log( globalText );
+// console.log( localText ); // [오류] localText is not defined
