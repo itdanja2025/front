@@ -29,14 +29,17 @@ document.querySelector("#box3").innerHTML = "박스3"; // 마크업 사이에 �
 function func1( ){ // 매개변수x 
     let value = document.querySelector(".myInput").value;
     console.log( value +" 입력 했군요.");
+    document.querySelector(".myInput").value = ""; // 공백으로 초기화 
 } // f end // 반환값 x
 // JS 에서 실행하는 방법1 : let 결과 = 함수명( 인자값 );
 // HTML 에서 실행하는 방법2 : <마크업명 이벤트속성명="함수명( 인자값 )" />
-
-
-
-
-
-
-
-
+function func2( ){ // 주의할점 : 입력상자(input/select/textarea등) 가능하다.
+    document.querySelector(".title").innerHTML = "JS에서 넣어준 텍스트"
+}
+// [7] .style = "CSS속성명:CSS속성값; " , 
+function func3( ){
+    // 한명령어(한줄)에 .(토드/접근산자) 가 많아지면 중간에 변수활용
+    let title2 = document.querySelector(".title2");
+    title2.style ="color : red;";
+    title2.style.backgroundColor = "blue"; // CSS는 -(하이픈)불가능 하므로 카멜표기법
+}// 카멜표기법이란? 낙타의 등 모양처럼 , mycar -> myCar , background-color -> backgroundColor
