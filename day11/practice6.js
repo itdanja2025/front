@@ -56,6 +56,7 @@ if( check == false ){ console.log("상품을 찾을 수 없습니다."); }
     let result = value + 10;  // value는 3 이다. 
 */
 
+<<<<<<< HEAD
 // 문제 5: 객체 배열 필터링하기 : users 배열에서 isActive가 true인 사용자들만으로 구성된 새로운 배열 activeUsers를 만들고, 이 배열을 콘솔에 출력하시오.
 const users = [{ id: 1, name: '유저1', isActive: true },{ id: 2, name: '유저2', isActive: false },
     { id: 3, name: '유저3', isActive: true },{ id: 4, name: '유저4', isActive: false }];
@@ -74,6 +75,27 @@ for( let index = 0 ; index <= movies.length-1 ; index++ ){// [2] 배열/목록 �
     movieTitles.push( movies[index].title ); // index번째 객체내 title 속성값을 새로운 배열에 추가(push)
 } // for end 
 console.log( movieTitles );
+=======
+
+
+
+// 문제 5: 객체 배열 필터링하기
+// users 배열에서 isActive가 true인 사용자들만으로 구성된 새로운 배열 activeUsers를 만들고, 이 배열을 콘솔에 출력하시오.
+// const users = [
+// { id: 1, name: '유저1', isActive: true },
+// { id: 2, name: '유저2', isActive: false },
+// { id: 3, name: '유저3', isActive: true },
+// { id: 4, name: '유저4', isActive: false }
+// ];
+
+// 문제 6: 객체 배열 데이터 변환하기
+// movies 배열에 있는 각 영화 객체에서 title 속성만 추출하여, 영화 제목들로만 이루어진 새로운 배열 movieTitles를 만들고 콘솔에 출력하시오.
+// const movies = [
+// { title: '인셉션', director: '크리스토퍼 놀란' },
+// { title: '기생충', director: '봉준호' },
+// { title: '매트릭스', director: '워쇼스키 자매' }
+// ];
+>>>>>>> 9634be245d364445a1eb7250fccf2532792ec1b5
 
 
 // 문제 7: 데이터 그룹화하기
