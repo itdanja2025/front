@@ -50,9 +50,38 @@ function func7( ){
     // DOM객체명.src = "이미지경로";
     mainImageDom.src="https://placehold.co/600x400/red/white";
 }
-
 /* 예제 8 : select 에서 선택한 option값 console 출력하기. */
-
-
+// <마크업 onclick = "함수명()" />  : 클릭했을떄 
+// <마크업 onchange = "함수명()" /> : 값 변경 되었을때 
+function func8( ){
+    const foodSelectDom = document.querySelector("#foodSelect");
+    const food = foodSelectDom.value; // 선택된 option 값 가져오기
+    console.log( food );
+}
 /* 예제 9 : input 에서 입력받은 값을 전역 배열에 저장하고 배열 상태를 출력하기. */
+const products = [ ]; // 전역배열 , 
+// 지역변수 대신에 전역변수 선언한이유 : 등록할때 마다 함수는 재실행/초기화/영구저장안됨
+function func9(){
+    // 입력 
+    const productInputDom = document.querySelector("#productInput");
+    const product = productInputDom.value;
+    // 저장
+    products.push( product ); // 배열에 입력받은값 저장 
+    // 출력
+    const productPrintDom = document.querySelector("#productPrint");
+    productPrintDom.innerHTML = products;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
