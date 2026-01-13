@@ -29,15 +29,27 @@ function func4(){
     // DOM객체.classList.toggle( 클래스명 ) : 만약에 클래스가 존재하면 삭제 없으면 추가
     bodyDom.classList.toggle("dark-mode");
 }
-
 /*예제 5: 특정 HTML 요소 제거하기, '박스 삭제' 버튼(id: 'removeBtn')을 클릭하면, id가 'targetBox'인 <div> 요소를 문서에서 제거하시오. */
-
-
+function func5(){
+    const targetBoxDom = document.querySelector("#targetBox");
+    targetBoxDom.remove();  // DOM객체.remove() : 해당 마크업 삭제/지우기
+}
 /*예제 6: 여러 요소에 동일한 작업 반복하기 , 클래스가 'item'인 모든 <p> 요소의 글자색을 'green'으로, 글자 두께를 'bold'로 변경하시오. */
-
-
+// querySelector(): 1개(객체반환)   vs querySelectorAll() : 여러개(배열반환) 
+let itemDoms = document.querySelectorAll(".item");
+for( let index = 0 ; index <= itemDoms.length -1 ; index++ ){
+    const item = itemDoms[index]; // index번째 dom(객체) 꺼내기
+    //item.style.color = "green";
+    //item.style.fontWeight = "bold";
+    // vs 
+    item.style = " color : green; font-weight : bold ";
+}
 /*예제 7: 이미지 소스(src) 변경하기 , https://placehold.co/ , '이미지 변경' 버튼(id: 'changeImgBtn')을 클릭하면, id가 'mainImage'인 <img> 요소의 src 속성을 'https://placehold.co/600x400/red/white'로 변경하시오. */
-
+function func7( ){
+    const mainImageDom = document.querySelector("#mainImage");
+    // DOM객체명.src = "이미지경로";
+    mainImageDom.src="https://placehold.co/600x400/red/white";
+}
 
 /* 예제 8 : select 에서 선택한 option값 console 출력하기. */
 
