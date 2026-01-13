@@ -39,19 +39,21 @@ function 등록함수(){
 } // f end 
 
 // 3-2] 출력함수 = 특정 화면 새로고침 == 렌더링 == 데이터 변화가 있을때 다시 화면 새로고침 
-function 출력함수(){  console.log( "출력함수 exe");
+function 출력함수(){                                                            console.log( "출력함수 exe");
     // 1. 어디에 : tbody 
-    let 테이블본문 = document.querySelector(".테이블본문");
+    let 테이블본문 = document.querySelector(".테이블본문");                           console.log(  테이블본문 );
     // 2. 무엇을 : 배열내 객체들을 <tr> 구성
-    let 무엇을 = ``;
+    let 무엇을 = ``;                                                                 console.log(  무엇을 );
     for( let index = 0 ; index <= 항목목록.length-1 ; index++ ){
-        let obj = 항목목록[index]; // 항목목록에서 index번째 객체 1개씩 가져오기 
+        let obj = 항목목록[index]; // 항목목록에서 index번째 객체 1개씩 가져오기  
+                                                                                    console.log(  obj );          
         무엇을 += `   <tr> 
                         <td> ${ obj.날짜 } </td> 
                         <td> ${ obj.항목 } </td> 
                         <td> ${ Number(obj.금액).toLocaleString() }원 </td> 
                     </tr>`
+                                                                                     console.log(  무엇을 );    
     } // for end 
     // 3. 출력 : 구성된 html 출력 한다. 
-    테이블본문.innerHTML = 무엇을;
+    테이블본문.innerHTML = 무엇을;                                                       console.log(  무엇을 );    
 } // f end 
