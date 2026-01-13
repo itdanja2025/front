@@ -97,9 +97,19 @@ renderList();
 
 /*실습 9: 입장료 계산 함수 : 임의의 나이(age)를 매개변수로 받아 입장료를 반환하는 getTicketPrice 함수를 만드시오.
 8세 미만: "무료"  8세 이상 19세 이하: "5,000원"  20세 이상: "10,000원"  계산된 가격 문자열을 반환(return)하시오.*/
-function getTicketPrice( age ){
-  if( age >= 20 ){ return "10,000원"; }
+
+function getTicketPrice(  age  ){
+  if( age >= 20 ){  return "10,000원"; }
   else if( age >= 8 ){ return "5,000원"; }
   else{ return "무료"; }
 } // f end 
-console.log( getTicketPrice( 21 ) ) ;
+console.log( getTicketPrice( 21 ) );   
+/*
+      변수의 종류 분류 시점 : 선언
+        - 선언 : let / const / function 키워드가 작성된 위치
+
+      변수 = 하나의 값/자료 저장 
+        - 전역변수 : { } 에서 선언 안된.
+        - 지역변수 : { } 에서 선언 된.
+        - 매개변수 : 인자값을 저장된.
+*/
