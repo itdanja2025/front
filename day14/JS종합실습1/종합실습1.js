@@ -50,9 +50,17 @@ function productPrint( ){ // 함수만들기 , 함수명은 아무거나 , ( ) �
     let html = "";// 2. 무엇을 + 배열내 모든 객체들을 TR 구성하여 HTML 만들기 + 반복문 
         for( let index = 0 ; index <= productAry.length-1 ; index++ ){
             const product = productAry[index]; // index번째 제품(객체) 1개 호출
+            // ccode --> category 변경 : ccode의 category 배열에서 찾기  
+            let category = "";
+            for( let index = 0 ; index <= categoryAry.length-1 ; index++ ){
+                if( product.ccode == categoryAry[index].ccode ){ // 만약에 제품의 카테고리코드가 index번째 카테고리코드 와 같으면 
+                    category = categoryAry[index].category;// 찾은 카테고리명 
+                    break; // 목표성공 : (가까운)반복문 종료
+                }
+            } // for end 
             html  += `<tr>
                         <td> <img src="${ product.image }"/> </td>
-                        <td> ${ product.ccode } </td> <td> ${ product.name } </td> 
+                        <td> ${ category } </td> <td> ${ product.name } </td> 
                         <td> ${ product.price } </td> <td> ${ product.date } </td> 
                         <td> 
                             <button onclick="productDelete( ${ product.pcode } )" class="deleteBtn">삭제</button> 
@@ -114,12 +122,15 @@ function productAdd( ){
     // 2. 입력받은 값 과 식별코드+1, 현재날짜( new Date() ) 로 객체를 구성한다.
     const obj = { 
         "pcode" : pcode , 
-        "image" : image ,
+        // 만약에 업로드된 이미지가 존재하지 않으면 샘플이미지 존재하면 이미지출력 < 미리보기 기능 >
+        // URL.createObjectURL( 이미지객체 ) : 이미지객체를 http 주소로 변경
+        "image" : image == undefined ? "https://placehold.co/100x100" : URL.createObjectURL( image ) ,
         "ccode" : category , 
         "name" : name ,  "price" : price ,  "date" : date 
     };
     productAry.push( obj );  // 3. 구성한 객체를 배열에 저장한다.
     productPrint(); // 4. 화면 새로고침/렌더링 한다.
+
 } // f end 
 
 
