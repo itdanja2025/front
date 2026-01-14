@@ -11,15 +11,15 @@
 
     <div id="wrap">
         <div id="top">
-            <select>
+            <select class="category">
                 <option value="disabled"> 카테고리 선택하세요. </option>
                 <option value="1" > 음료 </option>
                 <option value="2" > 과자 </option>
             </select>
-            <input placeholder="제품명" />
-            <input placeholder="제품가격" />
-            <input type="file" />
-            <button> 등록 </button>
+            <input class="name" placeholder="제품명" />
+            <input class="price" placeholder="제품가격" />
+            <input class="image" type="file" />
+            <button onclick="productAdd()"> 등록 </button>
         </div>
         <div id="main">
             <table>

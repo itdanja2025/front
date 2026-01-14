@@ -62,16 +62,66 @@ function productPrint( ){ // 함수만들기 , 함수명은 아무거나 , ( ) �
         } // for end 
     tbody.innerHTML = html;  // 3. 출력 
 } // f end 
+
 // 2. 삭제함수 : 해당 하는 행의 <삭제> 버튼을 클릭하면 삭제(배열내 제거 = .splice() )처리
 function productDelete( pcode ){ // 매개변수로 삭제할 pcode 받았다. [삭제할 대상자]
     for( let index = 0 ; index <= productAry.length-1 ; index++ ){// 1. pcode 의 배열내 인덱스 찾기.
         if( pcode == productAry[index].pcode ){ // 2. 만약에 삭제할pcode 와 index번째 pcode 와 같으면 
             productAry.splice( index , 1 ); // 3. 배열명.splice( 삭제할인덱스 , 개수 );
             productPrint(); // * 삭제 성공시 화면 새로고침/렌더링 한다. 즉] 출력함수 재호출 *
-            break;// 4. 1개만 삭제할 예정이므로 목표(삭제) 이뤘으면 반복문 종료
+            break;// 4. 1개만 삭제할 예정이므로 목표(삭제) 이뤘으면 반복문 종료 또는 함수 종료
+            // vs return 
         } // if end 
     } // for end 
 } // f end 
+
+// 3. 수정함수 : 해당 하는 행의 <수정> 버튼을 클릭하면 수정( 배열변수명[인덱스].속성명= 새로운값 )
+function productUpdate( pcode ){
+    for( let index = 0 ; index <= productAry.length-1 ; index++ ){// 1. 수정할 pcode의 인덱스를 배열에서 찾는다. <순회>
+        if( pcode == productAry[index].pcode ){ //2. 수정할코드 와 index번째 제품(객체) 와 같으면 
+            const newName = prompt("수정할 상품명 : "); // 입력 // *추후:수정페이지/모달 사용
+            const newPrice = prompt("수정할 가격 : ");
+            productAry[index].name = newName;   // 수정 
+            productAry[index].price = newPrice;
+            productPrint(); // **** 수정 성공시 [즉시] 화면 새로고침/렌더링 ****
+            return // vs break; // 수정 성공시 반복문 또는 함수 종료 
+        }
+    }// for end 
+} // f end 
+// 4. 등록함수 : 입력받은 값들을 객체(묶어서) 구성하여 배열에 저장( .push )
+let pcode = 3; // [전역변수] 처음에는 1로 가정 하고 시작 하되 샘플 데이터가 존재하면 마지막 코드+1
+function productAdd( ){  
+    // 1. 입력받은 값들을 가져온다.
+    const categoryDom = document.querySelector(".category");
+    const category = categoryDom.value;                     console.log( category );
+    const nameDom = document.querySelector(".name");
+    const name = nameDom.value;
+    const priceDom = document.querySelector(".price");
+    const price = priceDom.value;
+    const imageDom = document.querySelector(".image");
+    const image = imageDom.files[0]; console.log( image ); // 업로드 한 파일중에서 첫번째 파일 호출
+        // 유효성검사1. = 필요  없거나 잘못된 데이터 검증
+        if( category == "disabled"){ alert("카테고리를 선택하세요.!"); return; } // 함수종료[ 저장실패 ]
+        // 유효성검사2. , return 함수종료 : 아래 코드가 실행안됨.
+        if( name == "" || price == "" ){ alert("제품명과 가격은 필수입력 입니다."); return; }
+    // ********* new Date() 현재 시스템 날짜/시간 반환 ******
+    const year = new Date().getFullYear(); // 현재 연도
+    const month = new Date().getMonth()+1; // 현재 월 // + 1월 -> 0 취급 , 2월 -> 1 , 12월 -> 11 , +1한다.
+    const day = new Date().getDate(); // getDay 현재 요일 vs getDate 현재 일
+    const date = `${ year }-${ month < 10 ? "0"+month : month }-${ day < 10 ? "0"+day : day }`;  // [날짜 두자릿수(문자) 만들기] 만약에 3월 --> 03월 
+    // ********* pcode 는 자동으로 마지막 객체의 pcode + 1 *******
+    pcode += 1; // 다음 객체는 1증가 한 식별코드를 갖는다.
+    // 2. 입력받은 값 과 식별코드+1, 현재날짜( new Date() ) 로 객체를 구성한다.
+    const obj = { 
+        "pcode" : pcode , 
+        "image" : image ,
+        "ccode" : category , 
+        "name" : name ,  "price" : price ,  "date" : date 
+    };
+    productAry.push( obj );  // 3. 구성한 객체를 배열에 저장한다.
+    productPrint(); // 4. 화면 새로고침/렌더링 한다.
+} // f end 
+
 
 
 
