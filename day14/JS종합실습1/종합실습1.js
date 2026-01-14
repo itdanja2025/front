@@ -26,16 +26,53 @@
 // { "pcode" : 1 , "image" : "https://placehold.co/100x100" , "ccode" : 1 , "name" : "코카콜라" , "price" : 1000 , "date" : "2026-01-14" }
 
 // 4. 객체가 다수 일때는 배열 사용한다.
-const categoryAry = [ { "ccode" : 1 , "category" : "음료" } , { "ccode" : 2 , "category" : "과자" }  ]
+const categoryAry = [ { "ccode" : 1 , "category" : "음료" } , { "ccode" : 2 , "category" : "과자" }  ];
 const productAry = [
     { "pcode" : 1 , "image" : "https://placehold.co/100x100" , "ccode" : 1 , "name" : "코카콜라" , "price" : 1000 , "date" : "2026-01-14" },
     { "pcode" : 2 , "image" : "https://placehold.co/100x100" , "ccode" : 2 , "name" : "사이다" , "price" : 1500 , "date" : "2026-01-15" }
-]
-
+];
 // [2] 기능/함수 설계 
 // 1. 함수/기능 개수  , 등록[C]기능 , 출력[R]기능 , 수정[U]기능 , 삭제[D]기능 
+// 등록함수 , 매개변수 : X , 리턴값 : X , 처리 : 입력받은 4개와 현재시스템날짜 를 객체 만들어서 배열 저장 , 
+//      실행조건 : <등록> 클릭하면
+// 출력함수 , 매개변수 : X , 리턴값 : X , 처리 : 배열내 모든 객체들을 tr 구성하여 출력 , 
+//      실행조건 : 1.페이지열렸을때 2.등록성공 3.삭제성공 4.수정성공
+// 수정함수 , 매개변수 : pcode(수정할대상) , 리턴값 : X , 처리 : 수정할 값 PROMPT 받아서 매개변수의 제품 수정
+//      실행조건 : <수정> 클릭하면 
+// 삭제함수 , 매개변수 : pcode(삭제할대상) , 리턴값 : X , 처리 : 매개변수의 제품 삭제
+//      실행조건 : <삭제> 클릭하면 
 
 // [3] 구현 
+// 1. 출력함수 : 어디에 무엇을 출력하는지?
+productPrint(); // JS가 열렸을때 최초 1번 함수 실행 
+function productPrint( ){ // 함수만들기 , 함수명은 아무거나 , ( ) 매개변수 없는상태 , { } 함수 실행될때 처리할 코드
+    const tbody = document.querySelector("tbody"); // 1. 어디에 
+    let html = "";// 2. 무엇을 + 배열내 모든 객체들을 TR 구성하여 HTML 만들기 + 반복문 
+        for( let index = 0 ; index <= productAry.length-1 ; index++ ){
+            const product = productAry[index]; // index번째 제품(객체) 1개 호출
+            html  += `<tr>
+                        <td> <img src="${ product.image }"/> </td>
+                        <td> ${ product.ccode } </td> <td> ${ product.name } </td> 
+                        <td> ${ product.price } </td> <td> ${ product.date } </td> 
+                        <td> 
+                            <button onclick="productDelete( ${ product.pcode } )" class="deleteBtn">삭제</button> 
+                            <button onclick="productUpdate( ${ product.pcode } )" class="updateBtn">수정</button> 
+                        </td>
+                    </tr>` // 반복(객체 개수) 횟수 만큼 tr(행) 생성
+        } // for end 
+    tbody.innerHTML = html;  // 3. 출력 
+} // f end 
+// 2. 삭제함수 : 해당 하는 행의 <삭제> 버튼을 클릭하면 삭제(배열내 제거 = .splice() )처리
+function productDelete( pcode ){ // 매개변수로 삭제할 pcode 받았다. [삭제할 대상자]
+    for( let index = 0 ; index <= productAry.length-1 ; index++ ){// 1. pcode 의 배열내 인덱스 찾기.
+        if( pcode == productAry[index].pcode ){ // 2. 만약에 삭제할pcode 와 index번째 pcode 와 같으면 
+            productAry.splice( index , 1 ); // 3. 배열명.splice( 삭제할인덱스 , 개수 );
+            productPrint(); // * 삭제 성공시 화면 새로고침/렌더링 한다. 즉] 출력함수 재호출 *
+            break;// 4. 1개만 삭제할 예정이므로 목표(삭제) 이뤘으면 반복문 종료
+        } // if end 
+    } // for end 
+} // f end 
+
 
 
 
