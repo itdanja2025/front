@@ -27,7 +27,7 @@ func1(); // 다른 text1.js 에서 선언된 함수 사용
         3] .removeItem( 'key' );            : 세션/로컬 저장소에 'key' 삭제 ( value 같이 삭제됨 )
             .clear();                       : 모든 key 삭제 
 
-    4. JSON 변환 : 세션/로컬 저장소는 문자열 저장이 가능하다.
+    4. JSON 변환 : 세션/로컬 저장소는 문자열(HTTP기반) 저장이 가능하다.
         1] JSON.stringify( ) : JS객체 -> JSON문자열 
         2] JSON.parse( ) : JSON문자열 -> JS객체 
 */
